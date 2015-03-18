@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F079F6071957D41F3BDD81A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D378B734EB7BEE03E0F4B14 /* libPods.a */; };
+		AAA40BCD1ABA181C00CFEC2B /* SNSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA40BCC1ABA181B00CFEC2B /* SNSnap.swift */; };
+		AAA40BCF1ABA1EFF00CFEC2B /* SnapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA40BCE1ABA1EFF00CFEC2B /* SnapTableViewCell.swift */; };
 		AABD0FDA1AB74D8400C5A345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FD91AB74D8400C5A345 /* AppDelegate.swift */; };
-		AABD0FDC1AB74D8400C5A345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FDB1AB74D8400C5A345 /* ViewController.swift */; };
+		AABD0FDC1AB74D8400C5A345 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FDB1AB74D8400C5A345 /* StartViewController.swift */; };
 		AABD0FDF1AB74D8400C5A345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABD0FDD1AB74D8400C5A345 /* Main.storyboard */; };
 		AABD0FE11AB74D8400C5A345 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABD0FE01AB74D8400C5A345 /* Images.xcassets */; };
 		AABD0FE41AB74D8400C5A345 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABD0FE21AB74D8400C5A345 /* LaunchScreen.xib */; };
 		AABD0FF01AB74D8500C5A345 /* SNAppITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FEF1AB74D8500C5A345 /* SNAppITTests.swift */; };
+		AABD0FFC1AB7547300C5A345 /* SelectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FFB1AB7547300C5A345 /* SelectImageViewController.swift */; };
+		AABD0FFF1AB7594D00C5A345 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FFD1AB7594D00C5A345 /* PhotoCollectionViewCell.swift */; };
+		AABD10001AB7594D00C5A345 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABD0FFE1AB7594D00C5A345 /* PhotoCollectionViewCell.xib */; };
+		AABD10021AB75D8200C5A345 /* SnapDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10011AB75D8200C5A345 /* SnapDetailsViewController.swift */; };
+		AABD10041AB7681400C5A345 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */; };
+		AABD10061AB76DE500C5A345 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */; };
+		AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +36,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D378B734EB7BEE03E0F4B14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		812279D8275A5848285A61BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AAA40BCC1ABA181B00CFEC2B /* SNSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNSnap.swift; sourceTree = "<group>"; };
+		AAA40BCE1ABA1EFF00CFEC2B /* SnapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTableViewCell.swift; sourceTree = "<group>"; };
 		AABD0FD41AB74D8400C5A345 /* SNAppIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNAppIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABD0FD81AB74D8400C5A345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABD0FD91AB74D8400C5A345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AABD0FDB1AB74D8400C5A345 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AABD0FDB1AB74D8400C5A345 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AABD0FDE1AB74D8400C5A345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AABD0FE01AB74D8400C5A345 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AABD0FE31AB74D8400C5A345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AABD0FE91AB74D8500C5A345 /* SNAppITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNAppITTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABD0FEE1AB74D8500C5A345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABD0FEF1AB74D8500C5A345 /* SNAppITTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNAppITTests.swift; sourceTree = "<group>"; };
+		AABD0FF91AB74F2400C5A345 /* CocoapodsHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoapodsHeaders.h; sourceTree = "<group>"; };
+		AABD0FFB1AB7547300C5A345 /* SelectImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectImageViewController.swift; sourceTree = "<group>"; };
+		AABD0FFD1AB7594D00C5A345 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AABD0FFE1AB7594D00C5A345 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		AABD10011AB75D8200C5A345 /* SnapDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapDetailsViewController.swift; sourceTree = "<group>"; };
+		AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
+		AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F079F6071957D41F3BDD81A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAA40BCB1ABA180600CFEC2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAA40BCC1ABA181B00CFEC2B /* SNSnap.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		AABD0FCB1AB74D8400C5A345 = {
 			isa = PBXGroup;
 			children = (
 				AABD0FD61AB74D8400C5A345 /* SNAppIT */,
 				AABD0FEC1AB74D8500C5A345 /* SNAppITTests */,
 				AABD0FD51AB74D8400C5A345 /* Products */,
+				B46035049971DCAAD2B47308 /* Pods */,
+				B1378DC547E3DEA7CC5EB3E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +111,20 @@
 		AABD0FD61AB74D8400C5A345 /* SNAppIT */ = {
 			isa = PBXGroup;
 			children = (
+				AAA40BCB1ABA180600CFEC2B /* Model */,
 				AABD0FD91AB74D8400C5A345 /* AppDelegate.swift */,
-				AABD0FDB1AB74D8400C5A345 /* ViewController.swift */,
+				AABD0FDB1AB74D8400C5A345 /* StartViewController.swift */,
+				AABD0FFB1AB7547300C5A345 /* SelectImageViewController.swift */,
 				AABD0FDD1AB74D8400C5A345 /* Main.storyboard */,
-				AABD0FE01AB74D8400C5A345 /* Images.xcassets */,
-				AABD0FE21AB74D8400C5A345 /* LaunchScreen.xib */,
+				AABD0FFA1AB74FE200C5A345 /* Resources */,
 				AABD0FD71AB74D8400C5A345 /* Supporting Files */,
+				AABD0FFD1AB7594D00C5A345 /* PhotoCollectionViewCell.swift */,
+				AABD0FFE1AB7594D00C5A345 /* PhotoCollectionViewCell.xib */,
+				AABD10011AB75D8200C5A345 /* SnapDetailsViewController.swift */,
+				AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */,
+				AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */,
+				AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */,
+				AAA40BCE1ABA1EFF00CFEC2B /* SnapTableViewCell.swift */,
 			);
 			path = SNAppIT;
 			sourceTree = "<group>";
@@ -90,6 +132,7 @@
 		AABD0FD71AB74D8400C5A345 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AABD0FF91AB74F2400C5A345 /* CocoapodsHeaders.h */,
 				AABD0FD81AB74D8400C5A345 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +155,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AABD0FFA1AB74FE200C5A345 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AABD0FE01AB74D8400C5A345 /* Images.xcassets */,
+				AABD0FE21AB74D8400C5A345 /* LaunchScreen.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B1378DC547E3DEA7CC5EB3E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D378B734EB7BEE03E0F4B14 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B46035049971DCAAD2B47308 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				812279D8275A5848285A61BA /* Pods.debug.xcconfig */,
+				A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AABD0FF31AB74D8500C5A345 /* Build configuration list for PBXNativeTarget "SNAppIT" */;
 			buildPhases = (
+				7CBFB186D4C6C8ED62D70A7D /* Check Pods Manifest.lock */,
 				AABD0FD01AB74D8400C5A345 /* Sources */,
 				AABD0FD11AB74D8400C5A345 /* Frameworks */,
 				AABD0FD21AB74D8400C5A345 /* Resources */,
+				20045D63AB709A9F52BF0A65 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABD0FDF1AB74D8400C5A345 /* Main.storyboard in Resources */,
+				AABD10001AB7594D00C5A345 /* PhotoCollectionViewCell.xib in Resources */,
 				AABD0FE41AB74D8400C5A345 /* LaunchScreen.xib in Resources */,
 				AABD0FE11AB74D8400C5A345 /* Images.xcassets in Resources */,
 			);
@@ -207,13 +279,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20045D63AB709A9F52BF0A65 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CBFB186D4C6C8ED62D70A7D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AABD0FD01AB74D8400C5A345 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AABD0FDC1AB74D8400C5A345 /* ViewController.swift in Sources */,
+				AABD10021AB75D8200C5A345 /* SnapDetailsViewController.swift in Sources */,
+				AAA40BCF1ABA1EFF00CFEC2B /* SnapTableViewCell.swift in Sources */,
+				AABD0FDC1AB74D8400C5A345 /* StartViewController.swift in Sources */,
+				AABD10041AB7681400C5A345 /* SettingsTableViewController.swift in Sources */,
+				AABD0FFF1AB7594D00C5A345 /* PhotoCollectionViewCell.swift in Sources */,
+				AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */,
 				AABD0FDA1AB74D8400C5A345 /* AppDelegate.swift in Sources */,
+				AAA40BCD1ABA181C00CFEC2B /* SNSnap.swift in Sources */,
+				AABD10061AB76DE500C5A345 /* StoreTableViewController.swift in Sources */,
+				AABD0FFC1AB7547300C5A345 /* SelectImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,21 +449,25 @@
 		};
 		AABD0FF41AB74D8500C5A345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812279D8275A5848285A61BA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SNAppIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SNAppIT/CocoapodsHeaders.h;
 			};
 			name = Debug;
 		};
 		AABD0FF51AB74D8500C5A345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SNAppIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SNAppIT/CocoapodsHeaders.h;
 			};
 			name = Release;
 		};
@@ -407,6 +524,7 @@
 				AABD0FF51AB74D8500C5A345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AABD0FF61AB74D8500C5A345 /* Build configuration list for PBXNativeTarget "SNAppITTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +533,7 @@
 				AABD0FF81AB74D8500C5A345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
