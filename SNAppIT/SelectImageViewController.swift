@@ -25,9 +25,12 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
             return _assetsLibrary
         }
     }
+    var isLoading = false
     let loadingLimit = 20
     var assetsURLs: [NSURL]!
     var thumbnails: [UIImage]!
+    var photoGroupAssetURL: NSURL!
+    
     var imagesDirectory: String {
         get {
             return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
@@ -45,26 +48,58 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
         //loading existed images from the assets
         var thumbnails: [UIImage] = []
         self.assetsLibrary.enumerateGroupsWithTypes(ALAssetsGroupSavedPhotos, usingBlock: { (group, stop) -> Void in
-            self.enumerateGroup(group, completion: { (thumbsArr, urlsArr) -> Void in
-                if self.thumbnails == nil {
-                    self.thumbnails = thumbsArr
-                    self.assetsURLs = urlsArr
-                }
-                else {
-                    self.thumbnails.extend(thumbsArr)
-                    self.assetsURLs.extend(urlsArr)
-                }
-                self.collectionView.reloadData()
-                UIImageWriteToSavedPhotosAlbum(self.inputImage, nil, nil, nil)
-            })
+            if group != nil {
+                self.photoGroupAssetURL = group!.valueForProperty(ALAssetsGroupPropertyURL) as NSURL?
+                stop.initialize(true)
+                self.loadNextPortionOfImages()
+            }
         }) { (error) -> Void in
-            UIImageWriteToSavedPhotosAlbum(self.inputImage, nil, nil, nil)
+
         }
         
         self.collectionView.registerNib(PhotoCollectionViewCell.nib(), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier())
         
         let barButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("didPressNextButton:"))
         self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func loadNextPortionOfImages() {
+        if photoGroupAssetURL == nil || isLoading {
+            return
+        }
+        isLoading = true
+        self.assetsLibrary.groupForURL(photoGroupAssetURL, resultBlock: { (savedPhotoGroup) -> Void in
+            let imagesCount = savedPhotoGroup?.numberOfAssets() ?? 0
+            let currentOffset = self.thumbnails == nil ? 0 : self.thumbnails!.count
+            let lowerBound = max(imagesCount - currentOffset - self.loadingLimit, 0)
+            let indexSet = NSIndexSet(indexesInRange:NSMakeRange(lowerBound, min(imagesCount - currentOffset, self.loadingLimit)))
+            var assetsURLsArray: [NSURL] = []
+            var thumbnailsArray: [UIImage] = []
+            var indexPaths: [NSIndexPath] = []
+            
+            savedPhotoGroup?.enumerateAssetsAtIndexes(indexSet, options: NSEnumerationOptions.Reverse, usingBlock: { (alAsset, index, stop) -> Void in
+                if alAsset != nil {
+                    indexPaths.append(NSIndexPath(forItem: index - lowerBound + currentOffset, inSection: 0))
+                    assetsURLsArray.append(alAsset!.valueForProperty(ALAssetPropertyAssetURL) as NSURL)
+                    let assetThumbnail = UIImage(CGImage: alAsset.thumbnail().takeUnretainedValue())
+                    thumbnailsArray.append(assetThumbnail!)
+                    
+                    if index == lowerBound {
+                        if self.thumbnails == nil {
+                            self.thumbnails = thumbnailsArray
+                            self.assetsURLs = assetsURLsArray
+                        } else {
+                            self.thumbnails.extend(thumbnailsArray)
+                            self.assetsURLs.extend(assetsURLsArray)
+                        }
+                        self.isLoading = false
+                        self.collectionView.insertItemsAtIndexPaths(indexPaths)
+                    }
+                }
+            })
+        }) { (error) -> Void in
+            
+        }
     }
     
     func enumerateGroup(group: ALAssetsGroup!, completion: ([UIImage], [NSURL]) -> Void ) {
@@ -111,26 +146,24 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (thumbnails == nil ? 0 : thumbnails!.count) + 1
+        return thumbnails == nil ? 0 : thumbnails!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 && indexPath.row > thumbnails!.count - 5 {
+            loadNextPortionOfImages()
+        }
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCollectionViewCell.identifier(), forIndexPath: indexPath) as PhotoCollectionViewCell
-        cell.imageView.image = indexPath.item == 0 ? inputImage : thumbnails![indexPath.item - 1]
+        cell.imageView.image = indexPath.item == 0 ? inputImage : thumbnails![indexPath.item]
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.item == 0 {
-            self.imageView.image = inputImage
-        }
-        else {
-            let assetURL = assetsURLs![indexPath.item - 1]
-            self.assetsLibrary.assetForURL(assetURL, resultBlock: { (asset) -> Void in
-                self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullScreenImage().takeUnretainedValue())!
-                }) { (error) -> Void in
-                    
-            }
+        let assetURL = assetsURLs![indexPath.item]
+        self.assetsLibrary.assetForURL(assetURL, resultBlock: { (asset) -> Void in
+            self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullScreenImage().takeUnretainedValue())!
+            }) { (error) -> Void in
+                
         }
     }
 }

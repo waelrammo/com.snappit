@@ -42,7 +42,6 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-//        imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
@@ -60,12 +59,20 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     //MARK: - Image Picker Delegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as UIImage
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            UIImageWriteToSavedPhotosAlbum(image, self, Selector("image:didFinishSavingWithError:contextInfo:"), nil)
+        })
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>) {
+        dispatch_async(dispatch_get_main_queue(), {
+            MBProgressHUD.hideAllHUDsForView(self.view.window, animated: true)
             self.moveToSelectPhotoWindow(image)
         })
     }
