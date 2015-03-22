@@ -36,7 +36,7 @@ class StoreTableViewController: UITableViewController, MFMailComposeViewControll
         self.tableView.addSubview(self.referView)
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.referView.height, 0)
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset
-        self.snapsLabel.text = NSString(format: "%d snaps", SNSnap.savedSnaps().count)
+        self.snapsLabel.text = NSString(format: "%d snaps", SNSnap.snapCount())
     }
     
     override func viewWillAppear(animated: Bool) {

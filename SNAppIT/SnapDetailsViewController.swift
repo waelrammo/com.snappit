@@ -20,6 +20,10 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    var canEdit: Bool {
+        return inputSnap == nil || !inputSnap.isSend
+    }
+    
     var _formatter: NSDateFormatter!
     var formatter: NSDateFormatter {
         get {
@@ -41,24 +45,29 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
             self.titleTextField.text = inputSnap.title
             self.tagTextField.text = inputSnap.tags
             self.emailTextField.text = inputSnap.email
-            self.dateLabel.text = self.formatter.stringFromDate(inputSnap.date!)
-            self.imageView.image = inputSnap.photo
+            self.dateLabel.text = self.formatter.stringFromDate(inputSnap.date)
+            self.imageView.image = UIImage(data: inputSnap.image)
         }
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.titleTextField.becomeFirstResponder()
+        if self.canEdit {
+            self.titleTextField.becomeFirstResponder()
+        }
     }
     
     func popToRootControllerAfterSave() {
-        let snap = SNSnap()
+        let snap = SNSnap.MR_createEntity() as SNSnap
+        // FIXME: - set id
+//        snap.id = 
+        snap.sended = NSNumber(bool: true)
         snap.title = self.titleTextField.text
         snap.tags = self.tagTextField.text
         snap.email = self.emailTextField.text
-        snap.date = formatter.dateFromString(self.dateLabel.text!)
-        snap.photo = self.imageView.image
-        snap.save()
+        snap.date = formatter.dateFromString(self.dateLabel.text!)!
+        snap.image = UIImagePNGRepresentation(self.imageView.image)
+        MagicalRecord.saveUsingCurrentThreadContextWithBlockAndWait(nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
@@ -81,6 +90,10 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
         }
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return super.tableView(tableView, numberOfRowsInSection: section) - (self.canEdit ? 0 : 1)
+    }
+    
     // MARK: - Text Field Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.titleTextField {
@@ -95,6 +108,10 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return self.canEdit
     }
 
     // MARK: - Mail Compose Controller Delegate

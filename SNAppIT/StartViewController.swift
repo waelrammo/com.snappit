@@ -20,7 +20,7 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.snapslabel.text = NSString(format: "%d snaps", SNSnap.savedSnaps().count)
+        self.snapslabel.text = NSString(format: "%d snaps", SNSnap.snapCount())
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,9 +63,11 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        let image = info[UIImagePickerControllerOriginalImage] as UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as UIImage
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            let originalOrientation = image.imageOrientation;
+            image = image.rotateByOrientationFlag(originalOrientation)
             UIImageWriteToSavedPhotosAlbum(image, self, Selector("image:didFinishSavingWithError:contextInfo:"), nil)
         })
     }

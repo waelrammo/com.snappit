@@ -28,7 +28,7 @@ class SettingsTableViewController: UITableViewController {
         self.gotoTakePhotoSwitch.on = defaults.boolForKey("gotoTakePhoto")
         self.gotoMailSwitch.on = defaults.boolForKey("gotoMail")
         self.addCodeSwitch.on = defaults.boolForKey("addCode")
-        self.snapsButton.setTitle(NSString(format: "%d snaps", SNSnap.savedSnaps().count), forState: UIControlState.Normal)
+        self.snapsButton.setTitle(NSString(format: "%d snaps", SNSnap.snapCount()), forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {

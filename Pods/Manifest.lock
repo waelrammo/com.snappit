@@ -14,12 +14,16 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
   - MBProgressHUD (0.9.1)
   - MYHelpers (1.0.1)
   - pop (1.0.7)
 
 DEPENDENCIES:
   - BlocksKit
+  - MagicalRecord
   - MBProgressHUD
   - MYHelpers (from `https://raw.githubusercontent.com/AlexandrGraschenkov/MYHelpers/master/MYHelpers.podspec.json`)
   - pop
@@ -30,6 +34,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
   MYHelpers: 217c1a98608cdca493550bc60e549c6d10489394
   pop: 2f14a1ea61339767af9e66741b418c831b3844df

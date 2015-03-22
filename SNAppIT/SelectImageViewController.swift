@@ -161,7 +161,7 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let assetURL = assetsURLs![indexPath.item]
         self.assetsLibrary.assetForURL(assetURL, resultBlock: { (asset) -> Void in
-            self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullScreenImage().takeUnretainedValue())!
+            self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullResolutionImage().takeUnretainedValue())!
             }) { (error) -> Void in
                 
         }

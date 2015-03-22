@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ViT-PR-1nL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ViT-PR-1nL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -73,7 +73,7 @@
         <scene sceneID="loB-VB-yXz">
             <objects>
                 <tableViewController id="ddt-Nu-9zP" customClass="SnapsViewTableViewController" customModule="SNAppIT" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="0zL-nm-uHb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="0zL-nm-uHb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,53 +85,6 @@
                                 <outlet property="delegate" destination="ddt-Nu-9zP" id="mqS-FX-Bve"/>
                             </connections>
                         </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="snapCell" id="Esg-cs-ENc" customClass="SnapTableViewCell" customModule="SNAppIT" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Esg-cs-ENc" id="0QM-iu-xig">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GQ-aX-jEb">
-                                            <rect key="frame" x="16" y="14" width="457" height="23"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-6P-gez">
-                                            <rect key="frame" x="489" y="30" width="70" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="k5P-QI-T2H"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNS-ax-Pr3">
-                                            <rect key="frame" x="16" y="45" width="457" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Fr0-6P-gez" firstAttribute="leading" secondItem="0GQ-aX-jEb" secondAttribute="trailing" constant="16" id="3LN-QH-Zey"/>
-                                        <constraint firstAttribute="centerY" secondItem="0GQ-aX-jEb" secondAttribute="centerY" constant="15" id="5eP-AD-BNB"/>
-                                        <constraint firstItem="QNS-ax-Pr3" firstAttribute="top" secondItem="0GQ-aX-jEb" secondAttribute="bottom" constant="8" id="6fv-eH-JMF"/>
-                                        <constraint firstItem="QNS-ax-Pr3" firstAttribute="leading" secondItem="0GQ-aX-jEb" secondAttribute="leading" id="MTG-Zo-5n0"/>
-                                        <constraint firstItem="QNS-ax-Pr3" firstAttribute="trailing" secondItem="0GQ-aX-jEb" secondAttribute="trailing" id="PYq-W0-HUO"/>
-                                        <constraint firstAttribute="centerY" secondItem="Fr0-6P-gez" secondAttribute="centerY" id="Pbh-JP-344"/>
-                                        <constraint firstItem="0GQ-aX-jEb" firstAttribute="leading" secondItem="0QM-iu-xig" secondAttribute="leading" constant="16" id="XNu-8l-kJY"/>
-                                        <constraint firstAttribute="trailing" secondItem="Fr0-6P-gez" secondAttribute="trailing" constant="8" id="yuf-43-YXJ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="snapDate" destination="Fr0-6P-gez" id="aTE-qo-WkC"/>
-                                    <outlet property="snapSubtitle" destination="QNS-ax-Pr3" id="VsT-cw-PDg"/>
-                                    <outlet property="snapTitle" destination="0GQ-aX-jEb" id="fQv-gy-D3B"/>
-                                    <segue destination="P2P-ch-TRe" kind="show" identifier="ShowSnap" id="uL8-FU-vjY"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ddt-Nu-9zP" id="NJQ-Yk-40D"/>
                             <outlet property="delegate" destination="ddt-Nu-9zP" id="ogq-Uz-lfR"/>
@@ -139,6 +92,7 @@
                     </tableView>
                     <connections>
                         <outlet property="searchDisplayController" destination="XXB-Qe-wNQ" id="EhV-My-DB4"/>
+                        <segue destination="P2P-ch-TRe" kind="show" identifier="ShowSnap" id="APE-8z-lAu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsf-73-sRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,6 +759,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uL8-FU-vjY"/>
+        <segue reference="APE-8z-lAu"/>
     </inferredMetricsTieBreakers>
 </document>
