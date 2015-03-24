@@ -12,6 +12,7 @@ import MessageUI
 class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     var snapImage: UIImage!
+    var snapText: String!
     var inputSnap: SNSnap!
 
     @IBOutlet weak var titleTextField: UITextField!
@@ -83,9 +84,12 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
             mailComposeController.mailComposeDelegate = self
             mailComposeController.setSubject(self.titleTextField.text?.stringByAppendingString(" SNAppIT"))
             mailComposeController.setToRecipients([self.emailTextField.text])
-            mailComposeController.setMessageBody(self.tagTextField.text, isHTML: false)
+//            mailComposeController.setMessageBody(self.tagTextField.text, isHTML: false)
+            mailComposeController.setMessageBody(self.snapText, isHTML: false)
             let imageData = UIImagePNGRepresentation(snapImage)
+            let recognisedText = self.snapText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             mailComposeController.addAttachmentData(imageData, mimeType: "image/png", fileName: "SNAppIT.png")
+            mailComposeController.addAttachmentData(recognisedText, mimeType: "text/plain", fileName: "SNAppIT.txt")
             self.presentViewController(mailComposeController, animated: true, completion: nil)
         }
     }

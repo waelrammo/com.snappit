@@ -20,6 +20,7 @@ PODS:
   - MBProgressHUD (0.9.1)
   - MYHelpers (1.0.1)
   - pop (1.0.7)
+  - TesseractOCRiOS (3.4.0)
 
 DEPENDENCIES:
   - BlocksKit
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MYHelpers (from `https://raw.githubusercontent.com/AlexandrGraschenkov/MYHelpers/master/MYHelpers.podspec.json`)
   - pop
+  - TesseractOCRiOS
 
 EXTERNAL SOURCES:
   MYHelpers:
@@ -38,5 +40,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
   MYHelpers: 217c1a98608cdca493550bc60e549c6d10489394
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  TesseractOCRiOS: b2bdfc2c1041114ce146d2086d2376cfae17ff26
 
 COCOAPODS: 0.36.0.rc.1

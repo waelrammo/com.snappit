@@ -16,6 +16,16 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
     
     var inputImage: UIImage!
     
+    var _textRecogniser: SNTextRecogniser!
+    var textRecogniser: SNTextRecogniser {
+        get {
+            if _textRecogniser == nil {
+                _textRecogniser = SNTextRecogniser()
+            }
+            return _textRecogniser
+        }
+    }
+    
     var _assetsLibrary: ALAssetsLibrary!
     var assetsLibrary: ALAssetsLibrary {
         get {
@@ -123,20 +133,26 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func didPressNextButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("ShowDetailsSegue", sender: self.imageView.image)
-    }
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier == "ShowDetailsSegue" {
-            return self.imageView.image != nil
+        if self.imageView.image == nil {
+            UIAlertView(title: "Error", message: "Please choose image", delegate: nil, cancelButtonTitle: "OK").show()
+            return
         }
-        return super.shouldPerformSegueWithIdentifier(identifier, sender: sender)
+        let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        hud.labelText = "Processing"
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+            self.textRecogniser.recogniseTextFromImage(self.imageView.image!, completion: { (text) -> (Void) in
+                hud.hide(true)
+                self.performSegueWithIdentifier("ShowDetailsSegue", sender: [self.imageView.image!, text])
+            })
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetailsSegue" {
             let dvc = segue.destinationViewController as SnapDetailsViewController
-            dvc.snapImage = sender as UIImage
+            let parameters = sender as [AnyObject]
+            dvc.snapImage = parameters.first as UIImage
+            dvc.snapText = parameters.last as String
         }
     }
     

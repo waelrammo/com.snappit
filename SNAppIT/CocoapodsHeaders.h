@@ -12,3 +12,5 @@
 #import <pop/pop.h>
 #import <MYHelpers/MYHelpers.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <Tesseract.h>
+#import "TesseractOCR.h"

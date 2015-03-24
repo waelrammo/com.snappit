@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9F079F6071957D41F3BDD81A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D378B734EB7BEE03E0F4B14 /* libPods.a */; };
+		AAA705051AC20C8500DF9E96 /* SNTextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */; };
+		AAA7051A1AC21B0F00DF9E96 /* G8Tesseract.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA7050D1AC2170C00DF9E96 /* G8Tesseract.mm */; };
+		AAA7051B1AC21CF700DF9E96 /* G8RecognitionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA705091AC2170C00DF9E96 /* G8RecognitionOperation.m */; };
+		AAA7051C1AC21CF700DF9E96 /* G8RecognizedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA7050B1AC2170C00DF9E96 /* G8RecognizedBlock.m */; };
+		AAA7051D1AC21CF700DF9E96 /* G8TesseractParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA705101AC2170C00DF9E96 /* G8TesseractParameters.m */; };
+		AAA7051E1AC21CF700DF9E96 /* UIImage+G8Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA705131AC2170C00DF9E96 /* UIImage+G8Filters.m */; };
+		AAA705461AC21E4F00DF9E96 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = AAA705451AC21E4F00DF9E96 /* tessdata */; };
 		AABD0FDA1AB74D8400C5A345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FD91AB74D8400C5A345 /* AppDelegate.swift */; };
 		AABD0FDC1AB74D8400C5A345 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD0FDB1AB74D8400C5A345 /* StartViewController.swift */; };
 		AABD0FDF1AB74D8400C5A345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABD0FDD1AB74D8400C5A345 /* Main.storyboard */; };
@@ -44,6 +51,21 @@
 		812279D8275A5848285A61BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AAA40BCC1ABA181B00CFEC2B /* SNSnap1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNSnap1.swift; sourceTree = "<group>"; };
+		AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNTextRecogniser.swift; sourceTree = "<group>"; };
+		AAA705071AC2170C00DF9E96 /* G8Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8Constants.h; sourceTree = "<group>"; };
+		AAA705081AC2170C00DF9E96 /* G8RecognitionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8RecognitionOperation.h; sourceTree = "<group>"; };
+		AAA705091AC2170C00DF9E96 /* G8RecognitionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = G8RecognitionOperation.m; sourceTree = "<group>"; };
+		AAA7050A1AC2170C00DF9E96 /* G8RecognizedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8RecognizedBlock.h; sourceTree = "<group>"; };
+		AAA7050B1AC2170C00DF9E96 /* G8RecognizedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = G8RecognizedBlock.m; sourceTree = "<group>"; };
+		AAA7050C1AC2170C00DF9E96 /* G8Tesseract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8Tesseract.h; sourceTree = "<group>"; };
+		AAA7050D1AC2170C00DF9E96 /* G8Tesseract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = G8Tesseract.mm; sourceTree = "<group>"; };
+		AAA7050E1AC2170C00DF9E96 /* G8TesseractDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8TesseractDelegate.h; sourceTree = "<group>"; };
+		AAA7050F1AC2170C00DF9E96 /* G8TesseractParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8TesseractParameters.h; sourceTree = "<group>"; };
+		AAA705101AC2170C00DF9E96 /* G8TesseractParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = G8TesseractParameters.m; sourceTree = "<group>"; };
+		AAA705111AC2170C00DF9E96 /* TesseractOCR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesseractOCR.h; sourceTree = "<group>"; };
+		AAA705121AC2170C00DF9E96 /* UIImage+G8Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+G8Filters.h"; sourceTree = "<group>"; };
+		AAA705131AC2170C00DF9E96 /* UIImage+G8Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+G8Filters.m"; sourceTree = "<group>"; };
+		AAA705451AC21E4F00DF9E96 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		AABD0FD41AB74D8400C5A345 /* SNAppIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNAppIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABD0FD81AB74D8400C5A345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AABD0FD91AB74D8400C5A345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,13 +118,36 @@
 				AAF2323E1ABF4E4200A91899 /* SNSnap.swift */,
 				AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */,
 				AAA40BCC1ABA181B00CFEC2B /* SNSnap1.swift */,
+				AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		AAA705061AC2170C00DF9E96 /* TesseractOCR */ = {
+			isa = PBXGroup;
+			children = (
+				AAA705071AC2170C00DF9E96 /* G8Constants.h */,
+				AAA705081AC2170C00DF9E96 /* G8RecognitionOperation.h */,
+				AAA705091AC2170C00DF9E96 /* G8RecognitionOperation.m */,
+				AAA7050A1AC2170C00DF9E96 /* G8RecognizedBlock.h */,
+				AAA7050B1AC2170C00DF9E96 /* G8RecognizedBlock.m */,
+				AAA7050C1AC2170C00DF9E96 /* G8Tesseract.h */,
+				AAA7050D1AC2170C00DF9E96 /* G8Tesseract.mm */,
+				AAA7050E1AC2170C00DF9E96 /* G8TesseractDelegate.h */,
+				AAA7050F1AC2170C00DF9E96 /* G8TesseractParameters.h */,
+				AAA705101AC2170C00DF9E96 /* G8TesseractParameters.m */,
+				AAA705111AC2170C00DF9E96 /* TesseractOCR.h */,
+				AAA705121AC2170C00DF9E96 /* UIImage+G8Filters.h */,
+				AAA705131AC2170C00DF9E96 /* UIImage+G8Filters.m */,
+			);
+			path = TesseractOCR;
 			sourceTree = "<group>";
 		};
 		AABD0FCB1AB74D8400C5A345 = {
 			isa = PBXGroup;
 			children = (
+				AAA705451AC21E4F00DF9E96 /* tessdata */,
+				AAA705061AC2170C00DF9E96 /* TesseractOCR */,
 				AABD0FD61AB74D8400C5A345 /* SNAppIT */,
 				AABD0FEC1AB74D8500C5A345 /* SNAppITTests */,
 				AABD0FD51AB74D8400C5A345 /* Products */,
@@ -314,6 +359,7 @@
 				AABD0FE41AB74D8400C5A345 /* LaunchScreen.xib in Resources */,
 				AAF232431ABF57F600A91899 /* SnapTableViewCell.xib in Resources */,
 				AABD0FE11AB74D8400C5A345 /* Images.xcassets in Resources */,
+				AAA705461AC21E4F00DF9E96 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,9 +411,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABD10021AB75D8200C5A345 /* SnapDetailsViewController.swift in Sources */,
+				AAA7051D1AC21CF700DF9E96 /* G8TesseractParameters.m in Sources */,
 				AABD0FDC1AB74D8400C5A345 /* StartViewController.swift in Sources */,
 				AAF232371ABF497200A91899 /* SNAppIT.xcdatamodeld in Sources */,
+				AAA7051A1AC21B0F00DF9E96 /* G8Tesseract.mm in Sources */,
+				AAA7051C1AC21CF700DF9E96 /* G8RecognizedBlock.m in Sources */,
+				AAA7051B1AC21CF700DF9E96 /* G8RecognitionOperation.m in Sources */,
 				AABD10041AB7681400C5A345 /* SettingsTableViewController.swift in Sources */,
+				AAA7051E1AC21CF700DF9E96 /* UIImage+G8Filters.m in Sources */,
 				AAF232451ABF5DD400A91899 /* MyHelpers.swift in Sources */,
 				AABD0FFF1AB7594D00C5A345 /* PhotoCollectionViewCell.swift in Sources */,
 				AAF2323F1ABF4E4200A91899 /* SNSnap.swift in Sources */,
@@ -376,6 +427,7 @@
 				AAF2323B1ABF4AB300A91899 /* SNSnap+Ex.swift in Sources */,
 				AABD10061AB76DE500C5A345 /* StoreTableViewController.swift in Sources */,
 				AABD0FFC1AB7547300C5A345 /* SelectImageViewController.swift in Sources */,
+				AAA705051AC20C8500DF9E96 /* SNTextRecogniser.swift in Sources */,
 				AAF232421ABF57F600A91899 /* SnapTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +554,8 @@
 			baseConfigurationReference = 812279D8275A5848285A61BA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				INFOPLIST_FILE = SNAppIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +568,8 @@
 			baseConfigurationReference = A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				INFOPLIST_FILE = SNAppIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

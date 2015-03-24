@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-TesseractOCRiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>22E3426E9B6CE53724B7B2C3</key>
+		<key>13ACCA2EE89997E3BEB1E8EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29B0666E8273547A03BC0B65</key>
+		<key>6A263629E6CA332A25FAF0F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78DDB3EEBEBD622E846F8414</key>
+		<key>826A07CDDDD2C463C55335DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1B99699C6F02253C5698A5E</key>
+		<key>86E52ED1BF6A884ABAEF906D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C43E4FDDE86329BEBDC5F5DA</key>
+		<key>99E146DFF24082D003F21A8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DEBE7A5C35083F3C754E2A5E</key>
+		<key>C8D72C9DA448DE59B74B204B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE43DE63A07CCA02107B87EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
