@@ -7,9 +7,10 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="sended" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SNSnap" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="SNSnap" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

@@ -67,6 +67,7 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
         snap.tags = self.tagTextField.text
         snap.email = self.emailTextField.text
         snap.date = formatter.dateFromString(self.dateLabel.text!)!
+        snap.text = snapText
         snap.image = UIImagePNGRepresentation(self.imageView.image)
         MagicalRecord.saveUsingCurrentThreadContextWithBlockAndWait(nil)
         self.navigationController?.popToRootViewControllerAnimated(true)

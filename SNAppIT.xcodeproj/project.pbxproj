@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F079F6071957D41F3BDD81A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D378B734EB7BEE03E0F4B14 /* libPods.a */; };
+		AA071EB31AC4947B00F3B6FF /* SNSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA071EB21AC4947B00F3B6FF /* SNSnap.swift */; };
 		AAA705051AC20C8500DF9E96 /* SNTextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */; };
 		AAA7051A1AC21B0F00DF9E96 /* G8Tesseract.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAA7050D1AC2170C00DF9E96 /* G8Tesseract.mm */; };
 		AAA7051B1AC21CF700DF9E96 /* G8RecognitionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA705091AC2170C00DF9E96 /* G8RecognitionOperation.m */; };
@@ -30,7 +31,6 @@
 		AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */; };
 		AAF232371ABF497200A91899 /* SNAppIT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAF232351ABF497200A91899 /* SNAppIT.xcdatamodeld */; };
 		AAF2323B1ABF4AB300A91899 /* SNSnap+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */; };
-		AAF2323F1ABF4E4200A91899 /* SNSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2323E1ABF4E4200A91899 /* SNSnap.swift */; };
 		AAF232421ABF57F600A91899 /* SnapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF232401ABF57F600A91899 /* SnapTableViewCell.swift */; };
 		AAF232431ABF57F600A91899 /* SnapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAF232411ABF57F600A91899 /* SnapTableViewCell.xib */; };
 		AAF232451ABF5DD400A91899 /* MyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF232441ABF5DD400A91899 /* MyHelpers.swift */; };
@@ -50,6 +50,7 @@
 		4D378B734EB7BEE03E0F4B14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		812279D8275A5848285A61BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A75A1D14B492AA9E89A79A4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AA071EB21AC4947B00F3B6FF /* SNSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNSnap.swift; sourceTree = SOURCE_ROOT; };
 		AAA40BCC1ABA181B00CFEC2B /* SNSnap1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNSnap1.swift; sourceTree = "<group>"; };
 		AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNTextRecogniser.swift; sourceTree = "<group>"; };
 		AAA705071AC2170C00DF9E96 /* G8Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G8Constants.h; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewTableViewController.swift; sourceTree = "<group>"; };
 		AAF232361ABF497200A91899 /* SNAppIT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SNAppIT.xcdatamodel; sourceTree = "<group>"; };
 		AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SNSnap+Ex.swift"; sourceTree = "<group>"; };
-		AAF2323E1ABF4E4200A91899 /* SNSnap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SNSnap.swift; path = ../SNSnap.swift; sourceTree = "<group>"; };
 		AAF232401ABF57F600A91899 /* SnapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTableViewCell.swift; sourceTree = "<group>"; };
 		AAF232411ABF57F600A91899 /* SnapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapTableViewCell.xib; sourceTree = "<group>"; };
 		AAF232441ABF5DD400A91899 /* MyHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHelpers.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AAF232351ABF497200A91899 /* SNAppIT.xcdatamodeld */,
-				AAF2323E1ABF4E4200A91899 /* SNSnap.swift */,
+				AA071EB21AC4947B00F3B6FF /* SNSnap.swift */,
 				AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */,
 				AAA40BCC1ABA181B00CFEC2B /* SNSnap1.swift */,
 				AAA705041AC20C8500DF9E96 /* SNTextRecogniser.swift */,
@@ -421,7 +421,6 @@
 				AAA7051E1AC21CF700DF9E96 /* UIImage+G8Filters.m in Sources */,
 				AAF232451ABF5DD400A91899 /* MyHelpers.swift in Sources */,
 				AABD0FFF1AB7594D00C5A345 /* PhotoCollectionViewCell.swift in Sources */,
-				AAF2323F1ABF4E4200A91899 /* SNSnap.swift in Sources */,
 				AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */,
 				AABD0FDA1AB74D8400C5A345 /* AppDelegate.swift in Sources */,
 				AAF2323B1ABF4AB300A91899 /* SNSnap+Ex.swift in Sources */,
@@ -429,6 +428,7 @@
 				AABD0FFC1AB7547300C5A345 /* SelectImageViewController.swift in Sources */,
 				AAA705051AC20C8500DF9E96 /* SNTextRecogniser.swift in Sources */,
 				AAF232421ABF57F600A91899 /* SnapTableViewCell.swift in Sources */,
+				AA071EB31AC4947B00F3B6FF /* SNSnap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
