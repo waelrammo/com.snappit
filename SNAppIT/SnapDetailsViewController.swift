@@ -87,9 +87,9 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
             mailComposeController.setToRecipients([self.emailTextField.text])
 //            mailComposeController.setMessageBody(self.tagTextField.text, isHTML: false)
             mailComposeController.setMessageBody(self.snapText, isHTML: false)
-            let imageData = UIImagePNGRepresentation(snapImage)
+            let imageData = UIImageJPEGRepresentation(snapImage, 0.5)
             let recognisedText = self.snapText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-            mailComposeController.addAttachmentData(imageData, mimeType: "image/png", fileName: "SNAppIT.png")
+            mailComposeController.addAttachmentData(imageData, mimeType: "image/jpeg", fileName: "SNAppIT.jpeg")
             mailComposeController.addAttachmentData(recognisedText, mimeType: "text/plain", fileName: "SNAppIT.txt")
             self.presentViewController(mailComposeController, animated: true, completion: nil)
         }
