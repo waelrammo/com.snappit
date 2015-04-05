@@ -25,6 +25,24 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("appDidBecomeActive:"), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("appWillResignActive:"), name: UIApplicationWillResignActiveNotification, object: nil)
+        checkIfShouldOpenCamera()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func appDidBecomeActive(note: NSNotification) {
+        checkIfShouldOpenCamera()
+    }
+    
+    func appWillResignActive(note: NSNotification) {
+        shouldGoToCamera = nil
+    }
+    
+    func checkIfShouldOpenCamera() {
         if shouldGoToCamera == nil {
             let defaults = NSUserDefaults.standardUserDefaults()
             shouldGoToCamera = defaults.boolForKey("gotoTakePhoto")

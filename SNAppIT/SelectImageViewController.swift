@@ -13,6 +13,7 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionHeght: NSLayoutConstraint!
     
     var inputImage: UIImage!
     
@@ -50,6 +51,14 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
         return NSFileManager.defaultManager().contentsOfDirectoryAtPath(self.imagesDirectory, error: nil)!.count
     }
     
+//    override func supportedInterfaceOrientations() -> Int {
+//        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+//    }
+//    
+//    override func shouldAutorotate() -> Bool {
+//        return false
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Select"
@@ -71,6 +80,20 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
         
         let barButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("didPressNextButton:"))
         self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @IBAction func didPanGestireRecogniser(sender: UIPanGestureRecognizer) {
+        var value = self.view.height - sender.locationInView(self.view).y
+        if (value < 100) {
+            value = 100
+        }
+        else if value > 200 && UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
+            value = 200
+        }
+        else if value > 500 && UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+            value = 500
+        }
+        self.collectionHeght.constant = value
     }
     
     func loadNextPortionOfImages() {
@@ -156,6 +179,17 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
+    private func loadImageAtIndex(index: Int) {
+        let assetURL = assetsURLs![index]
+        self.assetsLibrary.assetForURL(assetURL, resultBlock: { (asset) -> Void in
+            if asset != nil { // image wasn't deleted by user
+                self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullResolutionImage().takeUnretainedValue())!
+            }
+            }) { (error) -> Void in
+                
+        }
+    }
+    
     //MARK: - Collection View Delegate
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -170,16 +204,14 @@ class SelectImageViewController: UIViewController, UICollectionViewDataSource, U
             loadNextPortionOfImages()
         }
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCollectionViewCell.identifier(), forIndexPath: indexPath) as PhotoCollectionViewCell
-        cell.imageView.image = indexPath.item == 0 ? inputImage : thumbnails![indexPath.item]
+        cell.imageView.image = thumbnails![indexPath.item]
+        if self.imageView.image == nil && indexPath.item == 0 { // we don't have an selected image
+            loadImageAtIndex(0)
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let assetURL = assetsURLs![indexPath.item]
-        self.assetsLibrary.assetForURL(assetURL, resultBlock: { (asset) -> Void in
-            self.imageView.image = UIImage(CGImage: asset.defaultRepresentation().fullResolutionImage().takeUnretainedValue())!
-            }) { (error) -> Void in
-                
-        }
+        loadImageAtIndex(indexPath.item)
     }
 }

@@ -29,6 +29,10 @@
 		AABD10041AB7681400C5A345 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */; };
 		AABD10061AB76DE500C5A345 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */; };
 		AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */; };
+		AAC2FCAC1AD17E2A008AA5C1 /* BlueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2FCAB1AD17E2A008AA5C1 /* BlueGradientView.swift */; };
+		AAC2FCAE1AD181DD008AA5C1 /* LightBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2FCAD1AD181DD008AA5C1 /* LightBarNavigationController.swift */; };
+		AAC2FCB31AD18621008AA5C1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2FCB21AD18621008AA5C1 /* Media.xcassets */; };
+		AAC2FCB51AD19477008AA5C1 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2FCB41AD19477008AA5C1 /* StoreViewController.swift */; };
 		AAF232371ABF497200A91899 /* SNAppIT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAF232351ABF497200A91899 /* SNAppIT.xcdatamodeld */; };
 		AAF2323B1ABF4AB300A91899 /* SNSnap+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */; };
 		AAF232421ABF57F600A91899 /* SnapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF232401ABF57F600A91899 /* SnapTableViewCell.swift */; };
@@ -85,6 +89,10 @@
 		AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		AABD10071AB76E9200C5A345 /* SnapsViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewTableViewController.swift; sourceTree = "<group>"; };
+		AAC2FCAB1AD17E2A008AA5C1 /* BlueGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueGradientView.swift; sourceTree = "<group>"; };
+		AAC2FCAD1AD181DD008AA5C1 /* LightBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightBarNavigationController.swift; sourceTree = "<group>"; };
+		AAC2FCB21AD18621008AA5C1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AAC2FCB41AD19477008AA5C1 /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		AAF232361ABF497200A91899 /* SNAppIT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SNAppIT.xcdatamodel; sourceTree = "<group>"; };
 		AAF2323A1ABF4AB300A91899 /* SNSnap+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SNSnap+Ex.swift"; sourceTree = "<group>"; };
 		AAF232401ABF57F600A91899 /* SnapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 		AABD0FD61AB74D8400C5A345 /* SNAppIT */ = {
 			isa = PBXGroup;
 			children = (
+				AAC2FCAA1AD17E1B008AA5C1 /* View */,
 				AABD0FDD1AB74D8400C5A345 /* Main.storyboard */,
 				AAA40BCB1ABA180600CFEC2B /* Model */,
 				AAF232311ABF373100A91899 /* Controllers */,
@@ -210,13 +219,23 @@
 			children = (
 				AABD0FE01AB74D8400C5A345 /* Images.xcassets */,
 				AABD0FE21AB74D8400C5A345 /* LaunchScreen.xib */,
+				AAC2FCB21AD18621008AA5C1 /* Media.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AAC2FCAA1AD17E1B008AA5C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAC2FCAB1AD17E2A008AA5C1 /* BlueGradientView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		AAF232311ABF373100A91899 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AAC2FCAD1AD181DD008AA5C1 /* LightBarNavigationController.swift */,
 				AABD0FDB1AB74D8400C5A345 /* StartViewController.swift */,
 				AAF232321ABF374300A91899 /* Select image */,
 				AAF232331ABF376B00A91899 /* Snaps list */,
@@ -250,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				AABD10031AB7681400C5A345 /* SettingsTableViewController.swift */,
+				AAC2FCB41AD19477008AA5C1 /* StoreViewController.swift */,
 				AABD10051AB76DE500C5A345 /* StoreTableViewController.swift */,
 			);
 			name = Settings;
@@ -356,6 +376,7 @@
 			files = (
 				AABD0FDF1AB74D8400C5A345 /* Main.storyboard in Resources */,
 				AABD10001AB7594D00C5A345 /* PhotoCollectionViewCell.xib in Resources */,
+				AAC2FCB31AD18621008AA5C1 /* Media.xcassets in Resources */,
 				AABD0FE41AB74D8400C5A345 /* LaunchScreen.xib in Resources */,
 				AAF232431ABF57F600A91899 /* SnapTableViewCell.xib in Resources */,
 				AABD0FE11AB74D8400C5A345 /* Images.xcassets in Resources */,
@@ -411,6 +432,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABD10021AB75D8200C5A345 /* SnapDetailsViewController.swift in Sources */,
+				AAC2FCAC1AD17E2A008AA5C1 /* BlueGradientView.swift in Sources */,
+				AAC2FCB51AD19477008AA5C1 /* StoreViewController.swift in Sources */,
 				AAA7051D1AC21CF700DF9E96 /* G8TesseractParameters.m in Sources */,
 				AABD0FDC1AB74D8400C5A345 /* StartViewController.swift in Sources */,
 				AAF232371ABF497200A91899 /* SNAppIT.xcdatamodeld in Sources */,
@@ -421,6 +444,7 @@
 				AAA7051E1AC21CF700DF9E96 /* UIImage+G8Filters.m in Sources */,
 				AAF232451ABF5DD400A91899 /* MyHelpers.swift in Sources */,
 				AABD0FFF1AB7594D00C5A345 /* PhotoCollectionViewCell.swift in Sources */,
+				AAC2FCAE1AD181DD008AA5C1 /* LightBarNavigationController.swift in Sources */,
 				AABD10081AB76E9200C5A345 /* SnapsViewTableViewController.swift in Sources */,
 				AABD0FDA1AB74D8400C5A345 /* AppDelegate.swift in Sources */,
 				AAF2323B1ABF4AB300A91899 /* SNSnap+Ex.swift in Sources */,

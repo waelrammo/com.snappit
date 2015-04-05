@@ -20,6 +20,7 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var snapsCountLabel: UILabel!
     
     var canEdit: Bool {
         return inputSnap == nil || !inputSnap.isSend
@@ -42,6 +43,7 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
         self.title = "Details"
         self.imageView.image = snapImage
         self.dateLabel.text = formatter.stringFromDate(NSDate())
+        self.snapsCountLabel.text = NSString(format: "%d snaps", SNSnap.snapCount())
         if inputSnap != nil {
             self.titleTextField.text = inputSnap.title
             self.tagTextField.text = inputSnap.tags
@@ -76,9 +78,13 @@ class SnapDetailsViewController: UITableViewController, UITextFieldDelegate, MFM
     // MARK: - Table View Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectSelectedRow()
-        if indexPath.row == 5 {
+        if indexPath.row == 6 {
             if !MFMailComposeViewController.canSendMail() {
                 UIAlertView(title: "Error", message: "Cannot send a mail", delegate: nil, cancelButtonTitle: "OK").show()
+                return
+            }
+            else if self.emailTextField.text.isEmpty {
+                UIAlertView(title: "Error", message: "An email address is required", delegate: nil, cancelButtonTitle: "OK").show()
                 return
             }
             let mailComposeController = MFMailComposeViewController()
